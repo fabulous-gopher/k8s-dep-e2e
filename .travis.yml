@@ -1,0 +1,12 @@
+language: go
+go:
+- 1.8
+
+sudo: false # Run in a container
+
+# Travis thinks only github is a thing, get pulls to work for everyone else
+addons:
+  ssh_known_hosts: bitbucket.org
+
+install: true # Skip
+script: ./scripts/migrate.sh
